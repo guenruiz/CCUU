@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Article.all
     render :json => @posts 
   end
   
   def show
-    @post = Post.find(params[:id])
+    @post = Article.find(params[:id])
     render :json => @post 
   end
   
