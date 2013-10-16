@@ -2,6 +2,8 @@ CCUU::Application.routes.draw do
   root 'welcome#index'
   get 'users' => 'users#index'
   get 'users/:id' => 'users#show'
+  get 'articles' => 'articles#index'
+  get 'articles/:id' => 'articles#show'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
