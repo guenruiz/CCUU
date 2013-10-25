@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025070005) do
+ActiveRecord::Schema.define(version: 20131025202829) do
 
   create_table "art_objects", force: true do |t|
-    t.string   "route"
+    t.string   "name"
     t.string   "description"
+    t.string   "route"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "article_id"
@@ -34,8 +35,9 @@ ActiveRecord::Schema.define(version: 20131025070005) do
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
   create_table "sources", force: true do |t|
-    t.string   "url"
     t.string   "name"
+    t.string   "description"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "article_id"
@@ -48,7 +50,7 @@ ActiveRecord::Schema.define(version: 20131025070005) do
     t.string   "last_name"
     t.string   "username"
     t.string   "password"
-    t.text     "about_user"
+    t.string   "about_user"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"

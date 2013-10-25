@@ -1,4 +1,10 @@
 CCUU::Application.routes.draw do
+  resources :sources
+
+  resources :art_objects
+
+  resources :users
+
   get "home/index"
   #resources :sources
 
