@@ -1,3 +1,25 @@
+(function() {
+  window.App = angular.module('CCUU', []);
+
+}).call(this);
+(function() {
+  App.controller('UsersCtrl', [
+    '$scope', function($scope) {
+      return $scope.message = "Angular Rocks!";
+    }
+  ]);
+
+}).call(this);
+(function() {
+  App.factory('Screencast', [
+    '$resource', function($resource) {
+      return $resource('/users/:id', {
+        id: '@id'
+      });
+    }
+  ]);
+
+}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,5 +32,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require app
-//= require_tree ./angular
+
+
+;

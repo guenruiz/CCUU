@@ -1,19 +1,13 @@
 class ArticlesController < ApplicationController
+  # GET /articles
+  # GET /articles.json
   def index
-    @posts = Article.all
-    render :json => @posts 
-  end
-  #public void index(){
-  #   List<Article> articulos = Articulos.findAll();
-  #   renderJson(articulos);
-  #}
-  def show
-    @post = Article.find(params[:id])
-    render :json => @post 
-  end
-  
-  def save_article
-    
+    render json: Article.all
   end
 
+  # GET /articles/:id
+  # GET /articles/:id.json
+  def show
+    render json: Article.find(params[:id])
+  end
 end

@@ -2,8 +2,8 @@
 
 one:
   url: MyString
-  title: MyString
+  name: MyString
 
 two:
   url: MyString
-  title: MyString
+  name: MyString

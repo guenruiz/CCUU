@@ -1,9 +1,22 @@
 CCUU::Application.routes.draw do
-  root 'welcome#index'
-  get 'users' => 'users#index'
-  get 'users/:id' => 'users#show'
-  get 'articles' => 'articles#index'
-  get 'articles/:id' => 'articles#show'
+  get "home/index"
+  #resources :sources
+
+  #resources :art_objects
+
+  resources :articles
+
+ #resources :users
+ #scope :api do
+    root to: "home#index"
+    get "/users(.:format)" => "users#index"
+    get "/users/:id(.:format)" => "users#show"
+  #end
+  
+  #get 'users' => 'users#index'
+  #get 'users/:id' => 'users#show'
+  #get 'articles' => 'articles#index'
+  #get 'articles/:id' => 'articles#show'
   
   
   # The priority is based upon order of creation: first created -> highest priority.

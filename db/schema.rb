@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009045333) do
+ActiveRecord::Schema.define(version: 20131025070005) do
 
   create_table "art_objects", force: true do |t|
-    t.string   "url"
+    t.string   "route"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20131009045333) do
 
   create_table "sources", force: true do |t|
     t.string   "url"
-    t.string   "title"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "article_id"
@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 20131009045333) do
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.text     "acerca_de"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "username"
     t.string   "password"
+    t.text     "about_user"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
