@@ -1,1 +1,1 @@
-window.App = angular.module('CCUU', [])
+//window.App = angular.module('CCUU', [])

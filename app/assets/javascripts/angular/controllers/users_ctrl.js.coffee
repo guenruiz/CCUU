@@ -1,3 +1,3 @@
-App.controller 'UsersCtrl', ['$scope','User', ($scope, User) ->
-  $scope.users = User.query()
-]
+//App.controller 'UsersCtrl', ['$scope','User', ($scope, User) ->
+//  $scope.users = User.query()
+//]
