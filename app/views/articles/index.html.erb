@@ -1,4 +1,20 @@
-<h1>Listing articles</h1>
+<div class="page-header">
+    <h1>Artículos</h1>
+</div>
+    <% @articles.each do |article| %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%= article.title %></h3>
+        </div>
+        <div class="panel-body">
+            <%= article.body %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+
+
 
 <table>
   <thead>
@@ -11,6 +27,10 @@
     </tr>
   </thead>
 
+  <div>
+
+  </div>
+
   <tbody>
     <% @articles.each do |article| %>
       <tr>
@@ -22,6 +42,7 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>

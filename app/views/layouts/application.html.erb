@@ -6,6 +6,7 @@
       <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     
       <%= csrf_meta_tags %>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="utf-8">
       <meta name="description" content="">
@@ -21,22 +22,19 @@
       <title>Narrow Jumbotron Template for Bootstrap</title>
   </head>
   <body>
-    <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><%= link_to 'Inicio', root_path %></li>
-        <li><%= link_to 'Usuarios', users_path %></li>
-        <li><%= link_to 'Artículos', articles_path %></li>
-      </ul>
-      <h3 class="text-muted">CCUU</h3>
-    </div>
-    <hr>
+    
+    <div class="container theme-showcase">
+          <div class="navbar header">
+              <ul class="nav nav-pills pull-right">
+                <li class="active"><%= link_to 'Inicio', root_path %></li>
+                <li><%= link_to 'Usuarios', users_path %></li>
+                <li><%= link_to 'Artículos', articles_path %></li>
+              </ul>
+              <h3 class="text-muted">CCUU</h3>
+          </div>
+      <hr>
+    	 <%= yield %>
 
-  	<%= yield %>
-  <!--
-  	script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
-    script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script
-  -->
-  <!--
-    %= javascript_include_tag "application", "data-turbolinks-track" => true %>-->
+    </div>
   </body>
 </html>
