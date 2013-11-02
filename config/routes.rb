@@ -15,8 +15,7 @@ CCUU::Application.routes.draw do
  #resources :users
  #scope :api do
     root to: "home#index"
-    get "/users(.:format)" => "users#index"
-    get "/users/:id(.:format)" => "users#show"
+    
   #end
   
   #get 'users' => 'users#index'
