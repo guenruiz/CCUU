@@ -1,26 +1,26 @@
-<div class="page-header">
-    <h1>Artículos</h1>
-</div>
-    <% @articles.each do |article| %>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title"><%= article.title %></h3>
-            <p>
-              <%= image_tag article.photo.url(:medium)  %>
-            </p>
-        </div>
-        <div class="panel-body">
-            <%= article.body %>
-        </div>
-      </div>
-    <% end %>
-</div>  
+  <% @articles.each do |article| %>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <h2 class="featurette-heading"><%= article.title %>
+        <small class="text-muted"><%= link_to 'Leer Más', article %></small>
+      </h2>
+      <br><br>
+      <div class="col-md-5">
+        <%= image_tag article.photo.url(:large), :class => "featurette-image img-responsive"%>
+      </div> 
+      <p class="lead">
+        <%= truncate article.body, length: 160 %>
+        <%= article.body %>
+      </p> 
+      <br>
+    </div>
+  <% end %>
+  <div>
+    <%= will_paginate @articles %>
+  </div>
 
-<div>
-  <%= will_paginate @articles %>
-</div>
 
-
+<br><br><br><br><br><br>
 
 <table>
   <thead>
