@@ -5,6 +5,9 @@
       <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title"><%= article.title %></h3>
+            <p>
+              <%= image_tag article.photo.url(:medium)  %>
+            </p>
         </div>
         <div class="panel-body">
             <%= article.body %>

@@ -18,15 +18,15 @@
 
       <!-- Latest compiled and minified JavaScript -->
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-      <title>Narrow Jumbotron Template for Bootstrap</title>
+      
   </head>
   <body>
   <div class="container theme-showcase">
-    <div class="container"> 
+    <div class="container">
   
 
       <div class="header">
-        <ul class="nav nav-pills pull-right"
+        <ul class="nav nav-pills pull-right">
           <li class="active"><%= link_to 'Inicio', root_path %></li>
           <li><%= link_to 'Usuarios', users_path %></li>
           <li><%= link_to 'Artículos', articles_path %></li>
@@ -36,7 +36,7 @@
       <hr>
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
       <h1>Hello {{yourName}}!</h1>
-    	<%= yield %>
+      <%= yield %>
     <!--
       %= javascript_include_tag "application", "data-turbolinks-track" => true %>-->
       <%= javascript_include_tag "http://code.jquery.com/jquery-1.10.1.min.js"%>
@@ -45,5 +45,4 @@
 
     </div>
   </div>
-  </body>
 </html>
