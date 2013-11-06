@@ -2,9 +2,7 @@
   <% @articles.each do |article| %>
     
     <div class="row featurette">
-      <h2 class="featurette-heading"><%= article.title %>
-      </h2>
-      <br><br>
+      <h2 class="featurette-heading"><%= article.title %></h2>
       <div class="col-md-5">
         <%= image_tag article.photo.url(:large), :class => "featurette-image img-responsive"%>
       </div> 
