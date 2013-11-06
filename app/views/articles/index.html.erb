@@ -1,8 +1,8 @@
+  
   <% @articles.each do |article| %>
-    <hr class="featurette-divider">
+    
     <div class="row featurette">
       <h2 class="featurette-heading"><%= article.title %>
-        <small class="text-muted"><%= link_to 'Leer Más', article %></small>
       </h2>
       <br><br>
       <div class="col-md-5">
@@ -14,14 +14,13 @@
       </p> 
       <br>
     </div>
+    <h2><small class="text-muted"><%= link_to 'Leer Más', article %></small></h2>
+    <hr class="featurette-divider">
   <% end %>
   <div>
     <%= will_paginate @articles %>
   </div>
-
-
-<br><br><br><br><br><br>
-
+<!--
 <table>
   <thead>
     <tr>
@@ -50,7 +49,6 @@
   </tbody>
 
 </table>
-
 <br>
-
+-->
 <%= link_to 'New Article', new_article_path %>

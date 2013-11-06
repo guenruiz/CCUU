@@ -1,46 +1,45 @@
 <!DOCTYPE html>
-<html ng-app>
-  <head>
-    <title>CCUU</title>
-      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    
-      <%= csrf_meta_tags %>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta charset="utf-8">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      
-      <link rel="stylesheet" href="/assets/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/bootstrap-theme.min.css">
-      <link rel="stylesheet" href="/assets/jumbotron-narrow.css">
-      
-  </head>
+<html>
+    <head>
+        <!--link href="assets/bootstrap.min.css" rel="stylesheet" media="screen">
+        
+        <link rel="stylesheet" href="assets/bootstrap-theme.min.css"-->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="assets/jumbotron-narrow.css">
+        <title>#ColectivoCUU</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+    </head>
   <body>
-  <div class="container theme-showcase">
-    <div class="container">
-  
+    <div class="container theme-showcase">
+      <div class="container">
+    
 
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><%= link_to 'Inicio', root_path %></li>
-          <li><%= link_to 'Usuarios', users_path %></li>
-          <li><%= link_to 'Artículos', articles_path %></li>
-        </ul>
-        <h3 class="text-muted">CCUU</h3>
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><%= link_to 'Inicio', root_path %></li>
+            <li><%= link_to 'Usuarios', users_path %></li>
+            <li><%= link_to 'Artículos', articles_path %></li>
+          </ul>
+          <h3 class="text-muted">#ColectivoCUU</h3>
+        </div>
+
+
+        <%= yield %>
+        
+
       </div>
+    </div>
 
-      <!--input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <h1>Hello {{yourName}}!</h1-->
-      <%= yield %>
-    <!--
-      %= javascript_include_tag "application", "data-turbolinks-track" => true %>-->
-      <script type="text/javascript" ></script>
       
       <%= javascript_include_tag "/assets/jquery-1.10.2.min.js"%>
       <%= javascript_include_tag "/assets/bootstrap.min.js"%>
       <%= javascript_include_tag "/assets/angular.min.js"%>
       <%= javascript_include_tag "/assets/angular-resource.min.js"%>
 
-    </div>
-  </div>
+  </body>
 </html>
