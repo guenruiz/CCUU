@@ -2,13 +2,12 @@
 
     <div class="container">
       <div class="jumbotron">
-        <h1>#Colectivo CUU</h1>
+        <h1>#ColectivoCUU</h1>
           <p class="lead">
             En Colectivo CUU nos interesan los artistas, quienes vean en la plástica, la gráfica, el video y la tecnología una vía para manifestar sus universos y llevarlo de una manera distinta al público.
           </p>
         <p>
-          <!--button type="button" class="btn btn-lg btn-primary"><%= link_to 'Artículos', articles_path %></button-->
-          <a class="btn btn-lg btn-success" href="/articles" role="button">Artículos :)</a>
+          <%= link_to 'Registrate', new_user_path, :class=>"btn btn-lg btn-success" %>
         </p>
       </div>
 
@@ -38,6 +37,7 @@
 
 
       <div class="footer">
+        <p><%= link_to 'Cerrar Sesión', logout_path %></p>
         <p>&copy; Derechos reservados 2013</p>
       </div>
 

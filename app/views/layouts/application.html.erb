@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--link href="assets/bootstrap.min.css" rel="stylesheet" media="screen">
+        <!--link href="assets/bootstrap.min.css" rel="stylesheet" media="screen"-->
         
-        <link rel="stylesheet" href="assets/bootstrap-theme.min.css"-->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="assets/jumbotron-narrow.css">
+        <link rel="stylesheet" href="/assets/jumbotron-narrow.css">
         <title>#ColectivoCUU</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
@@ -17,17 +16,22 @@
   <body>
     <div class="container theme-showcase">
       <div class="container">
-    
-
         <div class="header">
           <ul class="nav nav-pills pull-right">
             <li class="active"><%= link_to 'Inicio', root_path %></li>
             <li><%= link_to 'Usuarios', users_path %></li>
             <li><%= link_to 'Artículos', articles_path %></li>
+            <li><%= link_to 'Iniciar Sesión', login_path %></li>
           </ul>
           <h3 class="text-muted">#ColectivoCUU</h3>
         </div>
 
+        <% flash.each do |name, msg| %>
+          <div>
+            <%= content_tag :div, msg, :id => "flash#{name}" %>  
+            <button type="button" class="close" aria-hidden="true">&times;</button>  
+          </div>
+        <% end %>  
 
         <%= yield %>
         

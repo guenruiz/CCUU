@@ -1,11 +1,14 @@
 CCUU::Application.routes.draw do
+  get "sessions/new"
   resources :sources
-
   resources :art_objects
-
   resources :users
+  resources :sessions
 
   get "home/index"
+  get 'registro' => 'users#new', :as => 'registro' #registro_path
+  get 'login' => 'sessions#new', :as => 'login' #login_path
+  get 'logout' => 'sessions#delete', :as => 'logout' #logout_path
   #resources :sources
 
   #resources :art_objects

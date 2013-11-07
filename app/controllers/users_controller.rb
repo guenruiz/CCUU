@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_filter :login_required, :only => [:index]
   # GET /users
   def index
     @users = User.all
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to @user, notice: 'Ahora estas registrado! Gracias :)'
     else
       render action: 'new'
     end
@@ -53,6 +53,14 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :username, :password, :about_user, :email)
+      params.require(:user).permit(:first_name, :last_name, :username, :password, :password_confirmation, :about_user, :email)
     end
+
+    def login_required
+      if session[:user_id] == nil
+        flash[:error] = "Necesitas Iniciar sesión!"
+        redirect_to login_path
+      end
+    end
+
 end

@@ -1,44 +1,47 @@
-<div class="well"> 
-      <%= form_for @user, :html => { :class => "page-header"}  do |f|%>
-        <% if @user.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-            <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-            </ul>
-          </div>
+<%= form_for @user, :html => { :role => "form"}  do |f|%>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
         <% end %>
-        
-                <div class="form-group">
-                  <%= f.label "Nombre" %><br>
-                  <%= f.text_field :first_name, :class => "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label "Apellidos" %><br>
-                  <%= f.text_field :last_name, :class => "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label "Usuario" %><br>
-                  <%= f.text_field :username, :class => "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label "Password" %><br>
-                  <%= f.password_field :password, :class => "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label "Sobre ti" %><br>
-                  <%= f.text_field :about_user, :class => "form-control" %>
-                </div>
-                <div class="form-group">
-                  <%= f.label "Correo Electrónico" %><br>
-                  <%= f.text_field :email, :class => "form-control"%> <br>
-                </div>
-                <div >
-                  <%= f.submit "Guardar", :class => "btn btn-lg btn-default" %>
-                </div>
+      </ul>
+    </div>
+  <% end %> 
 
-      <% end %>
-</div>
+  <div class="form-group">
+    <%= f.label "Nombre" %>
+    <%= f.text_field :first_name, :class => "form-control",:autofocus=>true, :placeholder=>"Ingresa tu nombre" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Apellidos" %>
+    <%= f.text_field :last_name, :class => "form-control", :placeholder=>"Ingresa tu Apellido" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Sobre ti" %>
+    <%= f.text_area :about_user, :class => "form-control", :rows => "6", :placeholder=>"Hablanos de ti"%>
+  </div>
+  <div class="form-group">
+    <%= f.label "Email" %>
+    <%= f.text_field :email, :class => "form-control", :placeholder=>"Ingresa tu email"%>
+  </div>
+  <div class="form-group">
+    <%= f.label "Usuario" %>
+    <%= f.text_field :username, :class => "form-control", :placeholder=>"Tu nombre de usuario"%>
+  </div>
+  <div class="form-group">
+    <%= f.label "Contraseña" %>
+    <%= f.password_field :password, :class => "form-control", :placeholder=>"Ingresa tu Contraseña"%>
+  </div>
+  <div class="form-group">
+    <%= f.label "Repite tu contraseña" %>
+    <%= f.password_field :password_confirmation, :class => "form-control", :placeholder=>"Repite tu contraseña"%>
+  </div>
+  <div >
+    <%= f.submit "Registrarte", :class => "btn btn-lg btn-success" %>
+  </div>
+
+<% end %>
