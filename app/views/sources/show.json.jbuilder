@@ -1,0 +1,1 @@
+json.extract! @source, :name, :description, :url,  :route, :created_at, :updated_at, :article_id
