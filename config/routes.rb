@@ -4,29 +4,17 @@ CCUU::Application.routes.draw do
   resources :art_objects
   resources :users
   resources :sessions
+  resources :articles
 
   get "home/index"
   get 'registro' => 'users#new', :as => 'registro' #registro_path
   get 'login' => 'sessions#new', :as => 'login' #login_path
   get 'logout' => 'sessions#delete', :as => 'logout' #logout_path
-  #resources :sources
+  root to: "home#index"
 
-  #resources :art_objects
-
-  resources :articles
-
- #resources :users
- #scope :api do
-    root to: "home#index"
-    
+  #resources :users do
+  #  resources :articles 
   #end
-  
-  #get 'users' => 'users#index'
-  #get 'users/:id' => 'users#show'
-  #get 'articles' => 'articles#index'
-  #get 'articles/:id' => 'articles#show'
-  
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

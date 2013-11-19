@@ -18,6 +18,10 @@
   <div>
     <%= will_paginate @articles %>
   </div>
+
+<% if @articles.size == 0 %>
+   <em>No Existen Artículos</em>
+<% end %>
 <!--
 <table>
   <thead>
@@ -49,4 +53,4 @@
 </table>
 <br>
 -->
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'Crear Artículo', new_article_path %>

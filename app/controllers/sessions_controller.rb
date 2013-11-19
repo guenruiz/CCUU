@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
   def delete
   	session[:user_id] = nil
   	flash[:notice] = "Hasta pronto"
-	redirect_to root_url
+	 redirect_to root_url
   end
 end

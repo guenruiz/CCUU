@@ -10,5 +10,20 @@
   <%= @article.body %>
 </p>
 
+<% for source in @article.sources %>
+  <li>
+    <%=h source.url %>
+    <ul>
+    </ul>
+  </li>
+<% end %>
+<% for art_object in @article.art_objects %>
+  <li>
+    <%=h art_object.route %>
+    <ul>
+    </ul>
+  </li>
+<% end %>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

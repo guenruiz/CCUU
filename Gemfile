@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 gem 'angularjs-rails'
 gem 'will_paginate', '~> 3.0'	
 gem "paperclip", "~> 3.0"
+gem "cocoon"
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
