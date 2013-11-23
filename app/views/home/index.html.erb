@@ -1,44 +1,40 @@
-    
+<div class="jumbotron">
+    <h1>#Colectivo CUU</h1>
+      <p class="lead">
+        En Colectivo CUU nos interesan los artistas, quienes vean en la plástica, la gráfica, el video y la tecnología una vía para manifestar sus universos y llevarlo de una manera distinta al público.
+      </p>
+    <div>
+      <%= link_to 'Registrate', new_user_path, :class=>"btn btn-lg btn-success" %>
+    </div>
+</div>
+<div class="row marketing"> 
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>¿Quienés somos?</h2>
+      <p>
+        Somos un colectivo -De ahí nuestro nombre- que quiere mostrar el de la moneda dentro de la sociedad actual
+      </p>
+      <p> 
+        <a class="btn btn-default" href="#" role="button">Leer Más &raquo;</a>
+      </p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Manejo de Contenido</h2>
+      <p>
+        El usuario puede hacerse de los contenidos expuestos en el sitio (texto, imágenes, gráficos y videos) y utilizarlos de manera personal respetando siempre los derechos de autor.
+      </p>
+      <p>
+        <a class="btn btn-default" href="#" role="button">Leer Más &raquo;</a>
+      </p>
+    </div>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <h2>Manejo de Contenido</h2>
+      <p>
+        El usuario puede hacerse de los contenidos expuestos en el sitio (texto, imágenes, gráficos y videos) y utilizarlos de manera personal respetando siempre los derechos de autor.
+      </p>
+      <p>
+        <a class="btn btn-default" href="#" role="button">Leer Más &raquo;</a>
+      </p>
+    </div>
+</div>
 
-    <div class="container">
-      <div class="jumbotron">
-        <h1>#ColectivoCUU</h1>
-          <p class="lead">
-            En Colectivo CUU nos interesan los artistas, quienes vean en la plástica, la gráfica, el video y la tecnología una vía para manifestar sus universos y llevarlo de una manera distinta al público.
-          </p>
-        <p>
-          <%= link_to 'Registrate', new_user_path, :class=>"btn btn-lg btn-success" %>
-        </p>
-      </div>
 
-      <div class="row marketing"> 
-          <div class="col-lg-6">
-            <h2>¿Quienés somos?</h2>
-            <p>
-              Somos un colectivo -De ahí nuestro nombre- que quiere mostrar el de la moneda dentro de la sociedad actual
-            </p>
-            <p> <!--a class="btn btn-lg btn-primary" href="#">Leer Más &raquo;</a>-->
-              
-              <a class="btn btn-default" href="#" role="button">Leer Más &raquo;</a>
-            </p>
-          </div>
-          <div class="col-lg-6">
-            <h2>Manejo de Contenido</h2>
-            <p>
-              El usuario puede hacerse de los contenidos expuestos en el sitio (texto, imágenes, gráficos y videos) y utilizarlos de manera personal respetando siempre los derechos de autor.
-            </p>
-            <p><!--a class="btn btn-lg btn-primary" href="#">Leer Más &raquo;</a>-->
-              <a class="btn btn-default" href="#" role="button">Leer Más &raquo;</a>
-            </p>
-            
-          </div>
-        
-      </div>
-
-
-      <div class="footer">
-        <p><%= link_to 'Cerrar Sesión', logout_path %></p>
-        <p>&copy; Derechos reservados 2013</p>
-      </div>
-
-    </div> <!-- /container -->
