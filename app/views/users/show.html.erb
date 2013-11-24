@@ -1,29 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <p>
+    <% if @user.photo_file_name == nil%>
+      <img src="https://openminds.swissre.com/static//images/profile-default.png" class="img-circle"/>
+    <% else %>
+      <%= image_tag @user.photo.url(:medium), :class => "img-circle"%>
+    <% end %>
+  </p>
+  <p>
+    <strong>Nombre:</strong>
+    <%= @user.first_name %>
+  </p>
+  <br>
+  <p>
+    <strong>Apellidos:</strong>
+    <%= @user.last_name %>
+  </p>
+  <br>
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
+  <br>
+  <p>
+    <strong>Acerca de ti:</strong>
+    <%= @user.about_user %>
+  </p>
+  <br>
+  <p>
+    <strong>Correo Electrónico:</strong>
+    <%= @user.email %>
+  </p>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>About user:</strong>
-  <%= @user.about_user %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar perfil', edit_user_path(@user),:class => "btn btn-primary"%> <br>

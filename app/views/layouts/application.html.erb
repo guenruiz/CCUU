@@ -2,70 +2,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>#Colectivo CUU</title>
-        <% stylesheet_link_tag :all %>
-        <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
-        <link rel="stylesheet" href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>#Colectivo CUU</title>
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/examples/navbar-fixed-top/navbar-fixed-top.css">
+    <style type="text/css">
+      @import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700');
 
-  <style type="text/css">
-    @import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700');
+      html, body {
+         height: 100%;
+         font-family:'Open Sans',arial,sans-serif;
+      }
 
-    html, body {
-       height: 100%;
-       font-family:'Open Sans',arial,sans-serif;
-    }
+      #main {
+          background-color:#fefefe;
+      }
 
-    #main {
-        background-color:#fefefe;
-    }
+      #main .img-circle {
+        margin-top:20px;
+        height:100px;
+        width:100px;
+      }
+      
+      h1,h2,h3 {
+         font-weight:800;
+         font-family:'Open Sans',arial,sans-serif;
+      }
+      .label-default {
+        background-color:#dddddd;
+      }
+      .page-header {
+        margin-top: 55px;
+        padding-top: 9px;
+        border-top:1px solid #eeeeee;
+        font-weight:700;
+        text-transform:uppercase;
+        letter-spacing:2px;
+      }
 
-    #main .img-circle {
-      margin-top:20px;
-      height:100px;
-      width:100px;
-    }
-    
-    h1,h2,h3 {
-       font-weight:800;
-       font-family:'Open Sans',arial,sans-serif;
-    }
-    .label-default {
-      background-color:#dddddd;
-    }
+      .col-sm-9.full {
+          width: 100%;
+      }
 
-    h1,h2,h3 {
-       font-weight:800;
-       font-family:'Open Sans',arial,sans-serif;
-    }
-    .label-default {
-      background-color:#dddddd;
-    }
-    .page-header {
-      margin-top: 55px;
-      padding-top: 9px;
-      border-top:1px solid #eeeeee;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:2px;
-    }
-
-    .col-sm-9.full {
-        width: 100%;
-    }
-
-    small.text-muted {
-      font-family:courier,courier-new,monospace;
-    }
-
-  </style>
+      small.text-muted {
+        font-family:courier,courier-new,monospace;
+      }
+    </style>
   </head>
-
   <body>
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -92,18 +80,23 @@
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
-
-    <div class="container">
+    <div>
+          <div class="container">
       <%= render 'layouts/flash_messages' %>
       <%= yield %>
       <br>
       <div class="footer">
-        <p><%= link_to 'Cerrar Sesión', logout_path %></p>
+        <h5><%= link_to 'Cerrar Sesión', logout_path %></h5>
         <p>&copy;Derechos Reservados 2013</p>
       </div>    
     </div><!--/.container-->
 
+      
+
+    </div>
+
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
   </body>
+ 
 </html>

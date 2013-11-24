@@ -5,10 +5,11 @@ class User < ActiveRecord::Base
 	validates :first_name, :presence => { :message => "Falta tu nombre" }
   	validates :last_name, :presence => { :message => "Faltan tus apellidos" }
   	validates :username, :presence => { :message => "Necesitamos tu usuario" }
-  	validates :password, :presence => true, :on => :create,  :length => { :minimum => 6 }
+  	validates :password, :presence => { :message => "No debe ir en blanco" }, 
+  			  :on => :create,  :length => { :minimum => 6, :message => "Mínimo 6 caracteres" }
   	validates_confirmation_of :password
-  	validates :email, :format =>{ :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-  	has_attached_file :photo, :styles => { :large => "720x720", :medium => "300x300>", :thumb => "128x128>" }
+  	validates :email, :format =>{ :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message=>"Formato de email inválido" }
+  	has_attached_file :photo, :styles => { :large => "500x500#", :medium => "250x250#", :thumb => "128x128#" }
 
 
   	def self.authenticate(username,password)

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => [:index]
   # GET /users
   def index
-    @users = User.all
+    @users = User.all.order('first_name ASC')
   end
 
   # GET /users/1

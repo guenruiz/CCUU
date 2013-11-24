@@ -1,31 +1,38 @@
-<div class="col-sm-12">  
-  <div class="page-header text-muted">
-    <h2>Miembros</h2>
+<div>
+  <div class ="jumbotron">
+    <!--div class="col-sm-12">  
+      <div class="page-header text-muted"-->
+        <h2>Miembros</h2>
+      <!--/div>
+    </div-->
+  </div>
+
+  <div class="column col-sm-12" id="main">
+    <hr>
+      <% @users.each do |user| %>
+        <div class="row">
+          <div class="col-sm-10">
+            <h3> <%= "#{user.first_name} #{user.last_name}"%></h3>
+
+            <p>
+              <%= user.about_user %>
+            </p>
+            <h4><small class="text-muted"><%= user.email %></small></h4>
+          </div>
+          <div class="col-sm-2">
+            <a class="pull-right">
+              <% if user.photo_file_name == nil%>
+                <img src="https://openminds.swissre.com/static//images/profile-default.png" class="img-circle"/>
+              <% else %>
+                <%= image_tag user.photo.url(:large), :class => "img-circle"%>
+              <% end %>
+            </a>
+          </div>
+        </div>
+        <% if user != @users.last%>
+          <hr>
+        <% end %>
+      <% end %>
   </div>
 </div>
-<div class="column col-sm-12" id="main">
-    <% @users.each do |user| %>
-      <div class="row">
-        <div class="col-sm-10">
-          <h3> <%= "#{user.first_name} #{user.last_name}"%></h3>
-          <h4>
-            <span class="label label-default"><%= "Sobre #{user.first_name}"%></span>
-          </h4>
-          <p>
-            <%= user.about_user %>
-          </p>
-          <h4><small class="text-muted"><%= user.email %></small></h4>
-        </div>
-        <div class="col-sm-2">
-          <a class="pull-right">
-            <% if user.photo_file_name == nil%>
-              <img src="https://openminds.swissre.com/static//images/profile-default.png" class="img-circle"/>
-            <% else %>
-              <%= image_tag user.photo.url(:large), :class => "img-circle"%>
-            <% end %>
-          </a>
-        </div>
-      </div>
-      <hr>
-    <% end %>
-</div>
+

@@ -1,0 +1,8 @@
+<div id="error_explanation" class="alert alert-warning">
+  <h3><%= pluralize(f.errors.count, "error") %> No se ha podido completar el registro:</h3>
+  <ul>
+    <% f.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
