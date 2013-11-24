@@ -52,6 +52,10 @@
       small.text-muted {
         font-family:courier,courier-new,monospace;
       }
+
+      .img-responsive {
+    margin: 0 auto;
+}
     </style>
   </head>
   <body>
@@ -81,15 +85,15 @@
       </div><!-- /.container -->
     </div><!-- /.navbar -->
     <div>
-          <div class="container">
-      <%= render 'layouts/flash_messages' %>
-      <%= yield %>
-      <br>
-      <div class="footer">
-        <h5><%= link_to 'Cerrar Sesión', logout_path %></h5>
-        <p>&copy;Derechos Reservados 2013</p>
-      </div>    
-    </div><!--/.container-->
+      <div class="container">
+        <%= render 'layouts/flash_messages' %>
+        <%= yield %>
+        <br>
+        <div class="footer">
+          <%= link_to 'Cerrar Sesión', logout_path, :class => "btn btn-default" %>
+          · &copy;ColectivoCUU 2013
+        </div>    
+      </div><!--/.container-->
 
       
 

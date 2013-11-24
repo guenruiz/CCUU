@@ -4,4 +4,8 @@ module ArticlesHelper
   		"https://chart.googleapis.com/chart?cht=qr&chs=#{size}x#{size}&chl=#{CGI.escape(url)}"
 	end
 
+	def new_line(text)
+  		text.gsub(/\n/, '<br>')
+	end
+
 end

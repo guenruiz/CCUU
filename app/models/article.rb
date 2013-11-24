@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-	has_many :art_objects
+	has_many :art_objects, :dependent => :destroy
   	accepts_nested_attributes_for :art_objects, allow_destroy: true, reject_if: :all_blank
 
 	has_many :sources, :dependent => :destroy

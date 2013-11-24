@@ -28,10 +28,8 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    3.times do
-      @article.sources.build
-      @article.art_objects.build
-    end
+    1.times {@article.sources.build}
+    3.times {@article.art_objects.build}
   end
 
   # GET /articles/1/edit

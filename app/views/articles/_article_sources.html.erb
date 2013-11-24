@@ -1,10 +1,14 @@
-<div class="fields">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  	<%= f.check_box :_destroy %>
-  	<%= f.label :_destroy, "Remover Fuente" %>
+<strong>Añade una fuente a tu artículo: </strong><br>
+<div class="form-group">
+    <%= f.label 'Nombre', :for => :name, :class => "sr-only" %>
+    <%= f.text_field :name,:class => "form-control", :placeholder=>"Fuente" %>
+</div>
+<div class="form-group">
+    <%= f.label 'Url', :for => :url, :class => "sr-only" %>
+    <%= f.text_field :url, :class => "form-control",:placeholder=>"url" %>
+</div>
+<div class="checkbox">
+	<label>
+		<%= f.check_box :_destroy %> Remover
+	</label>
 </div>

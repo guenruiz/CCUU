@@ -1,31 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Título:</strong>
-  <%= @article.title %>
-</p>
+<div class="column col-sm-12">
+  <h1><%= @article.title %></h1>
+  <h4><span class="text-muted"><%= "#{@article.user.first_name} #{@article.user.last_name}"%></span></h4>
+  <h4><small class="text-muted"><%= @article.created_at.to_formatted_s(:long_ordinal) %></small></h4>
+  <div>
+    <% if @article.photo == nil%>
+      <img src="http://www.syevf.org/wp-content/uploads/2013/07/default_user_icon.jpg" class ="img-responsive"/>
+    <% else %>
+      <%= image_tag @article.photo.url(:large), :class => "img-responsive"%>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= simple_format @article.body, :class => "lead" %>
+  </div>
+  <br>
+  <h4>Comparte vía QR:</h4>
+  <br>
+  <% for art_object in @article.art_objects %>
+      <%= image_tag qr_code(250, art_object.route) , :class => "img-responsive"%><br>
+  <% end %>
 
-<p>
-  <strong>Texto:</strong>
-  <%= @article.body %>
-</p>
+  <div class="well">
+    <strong>Fuente:</strong>
+    <br>
+    <% for source in @article.sources %>
+      <%= link_to source.name, source.url %>
+      <br>
+    <% end %>
+  </div>
 
-<% for source in @article.sources %>
-  <li>
-    <%=h source.url %>
-    <ul>
-    </ul>
-  </li>
-<% end %>
-<% for art_object in @article.art_objects %>
-  <li>
-    <%=h art_object.route %>
+  <%= link_to 'Volver', articles_path, :class => "btn btn-primary" %>
+  <%if session[:user_id] == @article.user_id%>
+    <hr>
+    <strong>Parece que tu escribiste este artículo, puedes editarlo desde aquí directamente</strong><br>
+    <%= link_to 'Editar Artículo', edit_article_path(@article), :class => "btn btn-sm btn-primary"%>
+    <%= link_to 'Eliminar Artículo', article_path(@article.id), method: :delete, data: { confirm: 'Estas seguro de eliminar el Artículo?'}, :class => "btn btn-sm btn-danger"%>
+    <br>
+    <br>
+  <%end %>
+</div>
 
-    <ul>
-    </ul>
-  </li>
-  <img src="<%= qr_code(250, art_object.route) %>" />
-<% end %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
