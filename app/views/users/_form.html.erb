@@ -1,6 +1,5 @@
 
 <%= form_for @user, :html => { :role => "form"}  do |f|%>
-
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,35 +12,39 @@
   <% end %> 
 
   <div class="form-group">
-    <%= f.label "Nombre" %>
+    <%= f.label "Nombre", :for => :first_name %>
     <%= f.text_field :first_name, :class => "form-control",:autofocus=>true, :placeholder=>"Ingresa tu nombre" %>
   </div>
   <div class="form-group">
-    <%= f.label "Apellidos" %>
+    <%= f.label "Apellidos", :for=> :last_name %>
     <%= f.text_field :last_name, :class => "form-control", :placeholder=>"Ingresa tu Apellido" %>
   </div>
   <div class="form-group">
-    <%= f.label "Sobre ti" %>
+    <%= f.label "Sobre ti", :for=> :about_user %>
     <%= f.text_area :about_user, :class => "form-control", :rows => "6", :placeholder=>"Hablanos de ti"%>
   </div>
   <div class="form-group">
-    <%= f.label "Email" %>
+    <%= f.label "Email", :for=> :email %>
     <%= f.text_field :email, :class => "form-control", :placeholder=>"Ingresa tu email"%>
   </div>
   <div class="form-group">
-    <%= f.label "Usuario" %>
+    <%= f.label "Usuario", :for=> :username %>
     <%= f.text_field :username, :class => "form-control", :placeholder=>"Tu nombre de usuario"%>
   </div>
   <div class="form-group">
-    <%= f.label "Contraseña" %>
+    <%= f.label "Contraseña", :for=> :password %>
     <%= f.password_field :password, :class => "form-control", :placeholder=>"Ingresa tu Contraseña"%>
   </div>
   <div class="form-group">
-    <%= f.label "Repite tu contraseña" %>
+    <%= f.label "Repite tu contraseña", :for=> :password_confirmation %>
     <%= f.password_field :password_confirmation, :class => "form-control", :placeholder=>"Repite tu contraseña"%>
   </div>
+  <div class="form-group">
+      <%= f.label 'Imágen de perfil', :for => :photo %><br>
+      <%= f.file_field :photo, :class => "form-control" %><br>
+  </div>  
   <div >
-    <%= f.submit "Registrarte", :class => "btn btn-lg btn-success" %>
+    <%= f.submit "Registrarte", :class => "btn btn-primary" %>
   </div>
 
 <% end %>

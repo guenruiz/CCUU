@@ -1,35 +1,31 @@
-<h1>Listing users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Username</th>
-      <th>About user</th>
-      <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="col-sm-12">  
+  <div class="page-header text-muted">
+    <h2>Miembros</h2>
+  </div>
+</div>
+<div class="column col-sm-12" id="main">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.username %></td>
-        <td><%= user.about_user %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="row">
+        <div class="col-sm-10">
+          <h3> <%= "#{user.first_name} #{user.last_name}"%></h3>
+          <h4>
+            <span class="label label-default"><%= "Sobre #{user.first_name}"%></span>
+          </h4>
+          <p>
+            <%= user.about_user %>
+          </p>
+          <h4><small class="text-muted"><%= user.email %></small></h4>
+        </div>
+        <div class="col-sm-2">
+          <a class="pull-right">
+            <% if user.photo_file_name == nil%>
+              <img src="https://openminds.swissre.com/static//images/profile-default.png" class="img-circle"/>
+            <% else %>
+              <%= image_tag user.photo.url(:large), :class => "img-circle"%>
+            <% end %>
+          </a>
+        </div>
+      </div>
+      <hr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+</div>

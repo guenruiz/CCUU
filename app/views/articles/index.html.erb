@@ -3,9 +3,16 @@
     
     <div class="row featurette">
       <h2 class="featurette-heading"><%= article.title %></h2>
-      <div class="col-md-5">
-        <%= image_tag article.photo.url(:large), :class => "featurette-image img-responsive"%>
-      </div> 
+      <% if article.photo_file_name == nil%>
+          <div class="col-md-12">
+            <img src="http://www.syevf.org/wp-content/uploads/2013/07/default_user_icon.jpg"/>
+          </div>
+      <% else %>
+        <div class="col-md-12">
+          <%= image_tag article.photo.url(:large), :class => "featurette-image img-responsive"%>
+        </div> 
+      <% end %>
+
       <p class="lead">
         <%= truncate article.body, length: 160 %>
         <%= article.body %>

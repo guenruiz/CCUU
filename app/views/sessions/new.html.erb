@@ -1,8 +1,9 @@
-<div class="container">
-	<%= form_tag sessions_path, :class => "form-signin" do %>
-		<h2 class="form-signin-heading">Inicio de Sesión</h2>  
+
+<%= form_tag sessions_path, :class => "form-signin" do %>
+	<h2 class="form-signin-heading">Inicio de Sesión</h2>
+	<div class="form-group">
 		<%= text_field_tag  :username, params[:username], :class => "form-control", :placeholder=>"Usuario",:autofocus=>true%>
 		<%= password_field_tag :password, params[:password], :class => "form-control", :placeholder=>"Contraseña"%>
-		<%= submit_tag "Sign In",  :class=>"btn btn-lg btn-primary btn-block" %>
-	<% end %>
-</div>
+		<%= submit_tag "Ingresa",  :class=>"btn btn-primary btn-block" %>
+	</div>
+<% end %>

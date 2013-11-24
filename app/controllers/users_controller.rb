@@ -24,25 +24,25 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'Ahora estas registrado! Gracias :)'
+      redirect_to @user, success: 'Ahora estas registrado! Gracias :)'
     else
-      render action: 'new'
+      render action: 'new', alert: 'Ocurrio algun problema al crear tu usuario :C'
     end
   end
 
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to @user, success: 'User was successfully updated.'
     else
-      render action: 'edit'
+      render action: 'edit', alert: 'Ocurrio algun problema al crear tu usuario :C'
     end
   end
 
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+    redirect_to users_url, notice: 'Haz dejado de ser parte de ColectivoCUU, Bon voyage'
   end
 
   private
@@ -53,13 +53,14 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :username, :password, :password_confirmation, :about_user, :email)
+      params.require(:user).permit(:first_name, :last_name, :username, :password, 
+            :password_confirmation, :about_user, :email, :photo)
     end
 
     def login_required
       if session[:user_id] == nil
         flash[:error] = "Necesitas Iniciar sesión!"
-        redirect_to login_path
+        redirect_to login_path #, error: "Necesitas Iniciar sesión!"
       end
     end
 

@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   	validates :password, :presence => true, :on => :create,  :length => { :minimum => 6 }
   	validates_confirmation_of :password
   	validates :email, :format =>{ :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  	has_attached_file :photo, :styles => { :large => "720x720", :medium => "300x300>", :thumb => "128x128>" }
+
 
   	def self.authenticate(username,password)
   		user = find_by_username(username)
