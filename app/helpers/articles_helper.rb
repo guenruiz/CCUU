@@ -8,4 +8,8 @@ module ArticlesHelper
   		text.gsub(/\n/, '<br>')
 	end
 
+	def get_url(article)
+		"http://ccuu.herokuapp.com/articles/#{article.id}"
+	end
+
 end
