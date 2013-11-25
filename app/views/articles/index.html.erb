@@ -10,10 +10,10 @@
       <h4><span class="text-muted"><%= "#{article.user.first_name} #{article.user.last_name}"%></span></h4>
       <h4><small class="text-muted"><%= article.created_at.to_formatted_s(:long_ordinal) %></small></h4>
       <div>
-        <% if article.photo_file_name == nil%>
-          <img src="http://bootply.com/assets/example/bg_suburb.jpg" class ="img-responsive"/>
-        <% else %>
+        <% if article.photo.exists? %>
           <%= image_tag article.photo.url(:large), :class => "img-responsive"%>
+        <% else %>
+          <img src="http://bootply.com/assets/example/bg_suburb.jpg" class ="img-responsive"/>
         <% end %>
       </div>
       <br>

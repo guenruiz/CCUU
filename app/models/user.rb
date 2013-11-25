@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   			  :on => :create,  :length => { :minimum => 6, :message => "Mínimo 6 caracteres" }
   	validates_confirmation_of :password
   	validates :email, :format =>{ :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message=>"Formato de email inválido" }
-  	has_attached_file :photo, :styles => { :large => "500x500#", :medium => "250x250#", :thumb => "128x128#" }
+  	has_attached_file :photo, :styles => { :large => "500x500#", :medium => "250x250#", :thumb => "128x128#" },
+  					  :default_url => "https://openminds.swissre.com/static//images/profile-default.png"
 
 
   	def self.authenticate(username,password)

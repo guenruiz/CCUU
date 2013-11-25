@@ -59,7 +59,7 @@ class UsersController < ApplicationController
 
     def login_required
       if session[:user_id] == nil
-        flash[:error] = "Necesitas Iniciar sesión!"
+        flash[:error] = "Necesitas Iniciar sesión para ver la lista de miembros!"
         redirect_to login_path #, error: "Necesitas Iniciar sesión!"
       end
     end

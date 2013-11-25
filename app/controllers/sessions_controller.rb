@@ -15,8 +15,13 @@ class SessionsController < ApplicationController
   end
 
   def delete
-    u = User.find(session[:user_id])
-    session[:user_id] = nil
-	  redirect_to root_url, :notice => "Hasta luego #{u.first_name}!"
+    if session[:user_id] != nil
+      u = User.find(session[:user_id])
+      session[:user_id] = nil
+      redirect_to root_url, :notice => "Hasta luego #{u.first_name}!"  
+    else
+      redirect_to root_url
+    end
+
   end
 end

@@ -21,11 +21,12 @@
           </div>
           <div class="col-sm-2">
             <a class="pull-right">
-              <% if user.photo_file_name == nil%>
-                <img src="https://openminds.swissre.com/static//images/profile-default.png" class="img-circle"/>
-              <% else %>
+              <% if user.photo.exists? %>
                 <%= image_tag user.photo.url(:large), :class => "img-circle"%>
+              <% else %>
+                <img src="https://openminds.swissre.com/static//images/profile-default.png" class="img-circle"/>
               <% end %>
+
             </a>
           </div>
         </div>
