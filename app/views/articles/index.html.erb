@@ -37,7 +37,7 @@
     
   </div>
   <div>
-    <%= will_paginate @articles %>
+    <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
   </div>
 
   <% if @articles.size == 0 %>
