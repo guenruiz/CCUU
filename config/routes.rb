@@ -6,7 +6,7 @@ CCUU::Application.routes.draw do
   resources :sessions
   resources :articles
 
-  get "home/index"
+  get 'contacto' => 'contact#index', :as => 'contacto'
   get 'registro' => 'users#new', :as => 'registro' #registro_path
   get 'login' => 'sessions#new', :as => 'login' #login_path
   get 'logout' => 'sessions#delete', :as => 'logout' #logout_path
