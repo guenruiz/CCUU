@@ -2,7 +2,10 @@
   <div class ="jumbotron">
         <h2>Artículos</h2>
   </div>
-  
+    <div>
+    <%= link_to '¿Que esperas? crea un artículo', new_article_path, :class => "btn btn-primary" %>
+  </div>
+  <hr>
   <div class="column col-sm-12">
     
     <% @articles.each do |article| %>
@@ -44,9 +47,6 @@
      <em>No Existen Artículos</em>
   <% end %>
   <hr>
-  <div>
-    <%= link_to '¿Que esperas? crea un artículo', new_article_path, :class => "btn btn-primary" %>
-  </div>
 
 </div>
 
